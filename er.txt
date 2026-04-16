@@ -1,0 +1,17 @@
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│     users       │     │    requests     │     │    reviews      │
+├─────────────────┤     ├─────────────────┤     ├─────────────────┤
+│ id (PK)         │◄────│ user_id (FK)    │     │ id (PK)         │
+│ login           │     │ id (PK)         │     │ user_id (FK)    │
+│ password        │     │ course_type     │◄────│ request_id (FK) │
+│ full_name       │     │ start_date      │     │ review_text     │
+│ phone           │     │ payment_method  │     │ created_at      │
+│ email           │     │ status          │     └─────────────────┘
+│ role            │     │ created_at      │
+│ created_at      │     └─────────────────┘
+└─────────────────┘
+
+Связи:
+- users 1 ──────< requests (один пользователь → много заявок)
+- users 1 ──────< reviews (один пользователь → много отзывов)
+- requests 1 ───< reviews (одна заявка → много отзывов)
